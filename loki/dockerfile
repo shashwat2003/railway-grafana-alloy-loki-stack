@@ -5,5 +5,7 @@ FROM grafana/loki:${VERSION}
 # Copy the loki.yml configuration file to the container
 COPY loki.yml /etc/loki/loki-config.yaml
 
+USER root
+
 # Command to run Loki
 CMD ["-config.file=/etc/loki/loki-config.yaml"]
